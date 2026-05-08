@@ -281,6 +281,12 @@ const Home = () => {
                     <div className="absolute bottom-10 left-1/3 w-3 h-3 bg-fivestar-gold rounded-full animate-pulse"></div>
                 </div>
             </motion.div>
+
+            <div className="max-w-7xl mx-auto px-4 pt-10">
+                <p className="text-center text-gray-500 text-sm">
+                    {t('home.developedBy')}
+                </p>
+            </div>
         </div>
     );
 };
