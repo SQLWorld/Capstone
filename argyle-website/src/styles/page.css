@@ -1,0 +1,20 @@
+.page {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 2rem 1rem 1.5rem 1rem;
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 2px 14px 0 rgba(104,78,198,0.09);
+}
+.page h1 {
+  color: #684ec6;
+  margin-bottom: 1.4rem;
+}
+.page ul {
+  font-size: 1.07rem;
+  padding-left: 1.2em;
+}
+.page li {
+  margin-bottom: 0.6rem;
+}
+

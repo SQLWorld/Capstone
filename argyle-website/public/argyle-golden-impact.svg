@@ -1,0 +1,60 @@
+<svg width="400" height="250" viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background Glow Effect (Soft Purple-Gold Radial Gradient) -->
+    <defs>
+        <radialGradient id="goldGlow" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+            <stop offset="0%" stop-color="#FFD700" stop-opacity="0.6"/>
+            <stop offset="50%" stop-color="#DAA520" stop-opacity="0.3"/>
+            <stop offset="100%" stop-color="#684EC6" stop-opacity="0.1"/>
+        </radialGradient>
+        <filter id="glowFilter" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="15" result="blur"/>
+            <feFlood flood-color="#FFD700" flood-opacity="0.8" result="flood"/>
+            <feComposite in="flood" in2="blur" operator="in" result="glow"/>
+            <feMerge>
+                <feMergeNode in="glow"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+    </defs>
+
+    <rect x="0" y="0" width="400" height="250" fill="url(#goldGlow)"/>
+
+    <!-- Main Central Emblem (Golden Eagle/Star motif) -->
+    <g transform="translate(200, 125)" filter="url(#glowFilter)">
+        <!-- Outer Star/Sunburst -->
+        <path d="M0 -70 L20 -20 L70 -15 L30 10 L45 60 L0 30 L-45 60 L-30 10 L-70 -15 L-20 -20 Z" fill="#FFD700">
+            <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="15s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="1;0.8;1" dur="4s" repeatCount="indefinite"/>
+        </path>
+        <!-- Inner Emblem (Stylized Eagle Head or abstract form) -->
+        <circle cx="0" cy="0" r="35" fill="#DAA520"/>
+        <path d="M0 -30 Q 15 -15 0 0 Q -15 -15 0 -30 Z" fill="#FFF8DC" transform="translate(0, -10)">
+            <animateTransform attributeName="transform" type="translate" values="0 -10; 0 -15; 0 -10" dur="2s" repeatCount="indefinite"/>
+        </path>
+        <path d="M-25 10 Q -5 25 25 10 Q 5 25 -25 10 Z" fill="#FFF8DC" transform="translate(0, 10)">
+            <animateTransform attributeName="transform" type="translate" values="0 10; 0 15; 0 10" dur="2.5s" repeatCount="indefinite"/>
+        </path>
+    </g>
+
+    <!-- Animated Particles/Sparkles -->
+    <circle cx="50" cy="50" r="2" fill="#FFFFFF" opacity="0">
+        <animateMotion path="M 50 50 C 150 0, 250 100, 350 50 C 250 150, 150 250, 50 200 Z" dur="10s" repeatCount="indefinite" rotate="auto"/>
+        <animate attributeName="opacity" values="0;1;0" dur="5s" repeatCount="indefinite"/>
+        <animate attributeName="r" values="2;4;2" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="300" cy="200" r="3" fill="#FFFFFF" opacity="0">
+        <animateMotion path="M 300 200 C 200 250, 100 150, 50 200 C 150 100, 250 0, 300 50 Z" dur="12s" repeatCount="indefinite" rotate="auto" begin="3s"/>
+        <animate attributeName="opacity" values="0;1;0" dur="6s" repeatCount="indefinite" begin="3s"/>
+        <animate attributeName="r" values="3;5;3" dur="2.5s" repeatCount="indefinite" begin="3s"/>
+    </circle>
+
+    <!-- Subtle text overlay (Argyle Spirit) -->
+    <text x="200" y="230" font-family="Georgia, serif" font-size="16" fill="#FFFFFF" text-anchor="middle" font-style="italic" opacity="0.4">
+        Argyle Spirit
+        <animate attributeName="opacity" values="0.4;0.2;0.4" dur="8s" repeatCount="indefinite"/>
+    </text>
+
+</svg>
+
+
+

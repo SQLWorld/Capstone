@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-slate-950 text-slate-100 font-sans antialiased;
+  }
+
+  /* Mobile optimizations */
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Ensure proper viewport handling */
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+
+  /* Glow Utilities - Using standard CSS to avoid Tailwind arbitrary value formatting issues */
+  .glow-text-purple {
+    filter: drop-shadow(0 0 12px rgba(168, 85, 247, 0.8));
+    @apply text-purple-300;
+  }
+
+  .glow-text-blue {
+    filter: drop-shadow(0 0 12px rgba(56, 189, 248, 0.8));
+    @apply text-blue-300;
+  }
+
+  .glow-text-gold {
+    filter: drop-shadow(0 0 12px rgba(234, 179, 8, 0.6));
+    @apply text-yellow-200;
+  }
+
+  .glow-text-pink {
+    filter: drop-shadow(0 0 12px rgba(236, 72, 153, 0.8));
+    @apply text-pink-300;
+  }
+
+  .glow-text-green {
+    filter: drop-shadow(0 0 12px rgba(16, 185, 129, 0.8));
+    @apply text-green-300;
+  }
+
+  .glow-text-white {
+    filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.8));
+    @apply text-white;
+  }
+
+  .glow-text-gray {
+    filter: drop-shadow(0 0 8px rgba(156, 163, 175, 0.6));
+    @apply text-gray-300;
+  }
+
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-sm border border-white/10 transition-all duration-500;
+  }
+
+  .glass-card:hover {
+    @apply bg-white/15 border-fivestar-gold/60;
+    box-shadow: 0 0 25px rgba(255, 184, 0, 0.4), inset 0 0 10px rgba(255, 255, 255, 0.1);
+    transform: translateY(-4px);
+  }
+
+  .glass-panel {
+    @apply bg-fivestar-gray-light/60 backdrop-blur-xl border border-white/10 border-fivestar-gold/30;
+    box-shadow: 0 0 40px rgba(255, 184, 0, 0.3);
+  }
+
+  .super-glow {
+    box-shadow: 0 0 30px rgba(255, 184, 0, 0.4), 0 0 60px rgba(255, 184, 0, 0.2);
+  }
+
+  /* Mobile-specific utilities */
+  .mobile-safe-area {
+    @apply pb-safe-area-inset-bottom pl-safe-area-inset-left pr-safe-area-inset-right;
+  }
+
+  .mobile-touch-target {
+    @apply min-h-[44px] min-w-[44px];
+  }
+}
+
+/* Custom animations for marquee effect */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes shimmer {
+  0%, 100% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(100%);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-fivestar-gray;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-fivestar-gray-light rounded-full hover:bg-fivestar-gold transition-colors duration-300;
+  box-shadow: inset 0 0 6px rgba(255, 184, 0, 0.5);
+}

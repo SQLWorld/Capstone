@@ -1,0 +1,89 @@
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="goldGradientHyper" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#FFD700"/>
+            <stop offset="30%" stop-color="#DAA520"/>
+            <stop offset="60%" stop-color="#B8860B"/>
+            <stop offset="100%" stop-color="#FFD700"/>
+        </linearGradient>
+        <filter id="hyperTechGlow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur"/>
+            <feFlood flood-color="#FFD700" flood-opacity="0.8" result="flood"/>
+            <feComposite in="flood" in2="blur" operator="in" result="glow"/>
+            <feMerge>
+                <feMergeNode in="glow"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+    </defs>
+
+    <!-- Deep space background -->
+    <rect x="0" y="0" width="400" height="300" fill="#0A0A1A"/>
+
+    <!-- Subtle background nebula (dark purple) -->
+    <circle cx="100" cy="50" r="50" fill="#150A2A" opacity="0.2">
+        <animate attributeName="cx" values="100;120;100" dur="20s" repeatCount="indefinite"/>
+        <animate attributeName="cy" values="50;70;50" dur="22s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="300" cy="250" r="60" fill="#150A2A" opacity="0.2">
+        <animate attributeName="cx" values="300;280;300" dur="25s" repeatCount="indefinite"/>
+        <animate attributeName="cy" values="250;230;250" dur="23s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Central Core - Pulsating Hexagon -->
+    <g transform="translate(200, 150)">
+        <polygon points="-40,-69.28 40,-69.28 80,0 40,69.28 -40,69.28 -80,0" fill="url(#goldGradientHyper)" opacity="0.8" filter="url(#hyperTechGlow)">
+            <animateTransform attributeName="transform" type="scale" values="1;1.1;1" dur="3s" repeatCount="indefinite" additive="sum"/>
+            <animateTransform attributeName="transform" type="rotate" values="0;360" dur="15s" repeatCount="indefinite" additive="sum"/>
+        </polygon>
+        <polygon points="-30,-51.96 30,-51.96 60,0 30,51.96 -30,51.96 -60,0" fill="#000000" opacity="0.5" stroke="url(#goldGradientHyper)" stroke-width="1.5">
+            <animateTransform attributeName="transform" type="rotate" values="0;-360" dur="20s" repeatCount="indefinite" additive="sum"/>
+        </polygon>
+    </g>
+
+    <!-- Data Stream Lines - radiating from core -->
+    <path d="M200 150 L100 50" stroke="url(#goldGradientHyper)" stroke-width="2" opacity="0.7">
+        <animate attributeName="stroke-dasharray" values="0 100; 100 0" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite"/>
+    </path>
+    <path d="M200 150 L300 50" stroke="url(#goldGradientHyper)" stroke-width="2" opacity="0.7">
+        <animate attributeName="stroke-dasharray" values="0 100; 100 0" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+    </path>
+    <path d="M200 150 L100 250" stroke="url(#goldGradientHyper)" stroke-width="2" opacity="0.7">
+        <animate attributeName="stroke-dasharray" values="0 100; 100 0" dur="2s" begin="1s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="1s" repeatCount="indefinite"/>
+    </path>
+    <path d="M200 150 L300 250" stroke="url(#goldGradientHyper)" stroke-width="2" opacity="0.7">
+        <animate attributeName="stroke-dasharray" values="0 100; 100 0" dur="2s" begin="1.5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="1.5s" repeatCount="indefinite"/>
+    </path>
+
+    <!-- Floating Binary/Data Particles -->
+    <text x="50" y="200" font-family="monospace" font-size="12" fill="#FFD700" opacity="0">
+        <tspan>01101010</tspan>
+        <animate attributeName="x" values="50;150;50" dur="10s" repeatCount="indefinite"/>
+        <animate attributeName="y" values="200;100;200" dur="12s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.5;0" dur="5s" repeatCount="indefinite"/>
+    </text>
+    <text x="350" y="100" font-family="monospace" font-size="12" fill="#FFD700" opacity="0">
+        <tspan>10010110</tspan>
+        <animate attributeName="x" values="350;250;350" dur="11s" repeatCount="indefinite" begin="3s"/>
+        <animate attributeName="y" values="100;200;100" dur="13s" repeatCount="indefinite" begin="3s"/>
+        <animate attributeName="opacity" values="0;0.5;0" dur="5s" repeatCount="indefinite" begin="3s"/>
+    </text>
+
+    <!-- Holographic Grid Overlay -->
+    <rect x="0" y="0" width="400" height="300" fill="none" stroke="url(#goldGradientHyper)" stroke-width="0.5" opacity="0.1">
+        <animate attributeName="opacity" values="0.1;0.2;0.1" dur="8s" repeatCount="indefinite"/>
+    </rect>
+    <path d="M0 0 L400 300" stroke="url(#goldGradientHyper)" stroke-width="0.3" opacity="0.05"/>
+    <path d="M0 300 L400 0" stroke="url(#goldGradientHyper)" stroke-width="0.3" opacity="0.05"/>
+
+    <text x="200" y="280" font-family="'Share Tech Mono', monospace" font-size="22" fill="#FFD700" text-anchor="middle" filter="url(#hyperTechGlow)" opacity="0.7">
+        <tspan>FUTURE FORWARD</tspan>
+        <animate attributeName="opacity" values="0.7;1;0.7" dur="6s" repeatCount="indefinite"/>
+        <animateTransform attributeName="transform" type="translate" values="0 0; 0 -3; 0 0" dur="2.5s" repeatCount="indefinite"/>
+    </text>
+</svg>
+

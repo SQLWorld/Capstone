@@ -1,0 +1,13 @@
+<svg width="600" height="300" viewBox="0 0 600 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="50" y="50" width="200" height="200" rx="20" fill="#7BB5EA"/>
+<circle cx="350" cy="150" r="80" fill="#684EC6"/>
+<path d="M450 100 L550 150 L450 200 Z" fill="#F37DB5"/>
+<text x="150" y="150" font-family="Segoe UI" font-size="40" fill="#FFFFFF" text-anchor="middle" alignment-baseline="middle">Labs</text>
+<text x="350" y="150" font-family="Segoe UI" font-size="40" fill="#FFFFFF" text-anchor="middle" alignment-baseline="middle">Community</text>
+<text x="500" y="150" font-family="Segoe UI" font-size="30" fill="#FFFFFF" text-anchor="middle" alignment-baseline="middle">Innovate</text>
+<rect x="40" y="40" width="220" height="220" rx="25" stroke="#FFFFFF" stroke-width="5" stroke-opacity="0.5"/>
+<circle cx="350" cy="150" r="90" stroke="#FFFFFF" stroke-width="5" stroke-opacity="0.5"/>
+<path d="M440 90 L560 150 L440 210 Z" stroke="#FFFFFF" stroke-width="5" stroke-opacity="0.5"/>
+</svg>
+
+

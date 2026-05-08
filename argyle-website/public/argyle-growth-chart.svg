@@ -1,0 +1,98 @@
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="purpleChartGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#8A2BE2"/>
+            <stop offset="30%" stop-color="#9370DB"/>
+            <stop offset="60%" stop-color="#BA55D3"/>
+            <stop offset="100%" stop-color="#8A2BE2"/>
+        </linearGradient>
+        <filter id="chartGlow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur"/>
+            <feFlood flood-color="#BA55D3" flood-opacity="0.6" result="flood"/>
+            <feComposite in="flood" in2="blur" operator="in" result="glow"/>
+            <feMerge>
+                <feMergeNode in="glow"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+    </defs>
+
+    <!-- Deep space background -->
+    <rect x="0" y="0" width="400" height="300" fill="#0A0A1A"/>
+
+    <!-- Subtle background elements (dark purple for blending) -->
+    <circle cx="100" cy="220" r="35" fill="#101020" opacity="0.15"/>
+    <circle cx="300" cy="80" r="45" fill="#101020" opacity="0.15"/>
+
+    <!-- Animated Background Grid -->
+    <g opacity="0">
+        <animate attributeName="opacity" values="0;0.1;0" dur="10s" repeatCount="indefinite"/>
+        <path d="M50 50 L350 50 M50 100 L350 100 M50 150 L350 150 M50 200 L350 200" stroke="#333" stroke-width="0.5"/>
+        <path d="M100 0 L100 250 M150 0 L150 250 M200 0 L200 250 M250 0 L250 250 M300 0 L300 250" stroke="#333" stroke-width="0.5"/>
+    </g>
+
+    <!-- Growth Chart Base Lines -->
+    <g transform="translate(50, 250)">
+        <!-- X-axis -->
+        <line x1="0" y1="0" x2="300" y2="0" stroke="#333" stroke-width="1" opacity="0">
+            <animate attributeName="opacity" values="0;1" dur="1s" fill="freeze" begin="0.2s"/>
+            <animate attributeName="x2" values="0;300" dur="1s" fill="freeze" begin="0.2s"/>
+        </line>
+        <!-- Y-axis -->
+        <line x1="0" y1="0" x2="0" y2="-200" stroke="#333" stroke-width="1" opacity="0">
+            <animate attributeName="opacity" values="0;1" dur="1s" fill="freeze" begin="0.2s"/>
+            <animate attributeName="y2" values="0;-200" dur="1s" fill="freeze" begin="0.2s"/>
+        </line>
+
+        <!-- Growth Line Chart -->
+        <polyline
+            points="0,0 60,-50 120,-120 180,-80 240,-150 300,-180"
+            fill="none" stroke="url(#purpleChartGradient)" stroke-width="4" stroke-linecap="round"
+            filter="url(#chartGlow)"
+        >
+            <animate
+                attributeName="stroke-dasharray"
+                values="0 500; 500 0"
+                dur="3s" fill="freeze" begin="1.5s"
+            />
+            <animate
+                attributeName="stroke-opacity"
+                values="0.7;1;0.7"
+                dur="5s" repeatCount="indefinite"
+            />
+        </polyline>
+
+        <!-- Data Points with animation -->
+        <circle cx="0" cy="0" r="8" fill="url(#purpleChartGradient)" opacity="0">
+            <animate attributeName="opacity" values="0;1" begin="0.5s" dur="0.5s" fill="freeze"/>
+            <animate attributeName="r" values="8;10;8" begin="1s" dur="1.5s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="60" cy="-50" r="8" fill="url(#purpleChartGradient)" opacity="0">
+            <animate attributeName="opacity" values="0;1" begin="1s" dur="0.5s" fill="freeze"/>
+            <animate attributeName="r" values="8;10;8" begin="1.5s" dur="1.5s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="120" cy="-120" r="8" fill="url(#purpleChartGradient)" opacity="0">
+            <animate attributeName="opacity" values="0;1" begin="1.5s" dur="0.5s" fill="freeze"/>
+            <animate attributeName="r" values="8;10;8" begin="2s" dur="1.5s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="180" cy="-80" r="8" fill="url(#purpleChartGradient)" opacity="0">
+            <animate attributeName="opacity" values="0;1" begin="2s" dur="0.5s" fill="freeze"/>
+            <animate attributeName="r" values="8;10;8" begin="2.5s" dur="1.5s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="240" cy="-150" r="8" fill="url(#purpleChartGradient)" opacity="0">
+            <animate attributeName="opacity" values="0;1" begin="2.5s" dur="0.5s" fill="freeze"/>
+            <animate attributeName="r" values="8;10;8" begin="3s" dur="1.5s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="300" cy="-180" r="8" fill="url(#purpleChartGradient)" opacity="0">
+            <animate attributeName="opacity" values="0;1" begin="3s" dur="0.5s" fill="freeze"/>
+            <animate attributeName="r" values="8;10;8" begin="3.5s" dur="1.5s" repeatCount="indefinite"/>
+        </circle>
+    </g>
+
+    <!-- Digital Text Overlay for Growth Chart -->
+    <text x="200" y="280" font-family="'Share Tech Mono', monospace" font-size="22" fill="#BA55D3" text-anchor="middle" filter="url(#chartGlow)" opacity="0.7">
+        <tspan>MEASURING SUCCESS</tspan>
+        <animate attributeName="opacity" values="0.7;1;0.7" dur="6s" repeatCount="indefinite"/>
+        <animateTransform attributeName="transform" type="translate" values="0 0; 0 -3; 0 0" dur="2.5s" repeatCount="indefinite"/>
+    </text>
+</svg>
