@@ -4,10 +4,9 @@ import path from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-    // Allow overriding the base at build time with VITE_BASE environment variable.
-    // Default to '/' so builds work when deployed to the site root (Netlify/Vercel).
-    // If you need the GitHub Pages subpath, set VITE_BASE=/Capstone/ in CI or build env.
-    base: process.env.VITE_BASE || '/',
+    // Site is deployed to GitHub Pages at /Capstone/, use that as the base path.
+    // If you need to override it in other environments, change this file accordingly.
+    base: '/Capstone/',
     plugins: [react()],
     resolve: {
         alias: {
