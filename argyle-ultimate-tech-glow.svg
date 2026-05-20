@@ -1,0 +1,93 @@
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="goldGradientUltimate" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#FFD700"/>
+            <stop offset="30%" stop-color="#DAA520"/>
+            <stop offset="60%" stop-color="#B8860B"/>
+            <stop offset="100%" stop-color="#FFD700"/>
+        </linearGradient>
+        <filter id="ultimateTechGlow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"/>
+            <feFlood flood-color="#FFD700" flood-opacity="0.9" result="flood"/>
+            <feComposite in="flood" in2="blur" operator="in" result="glow"/>
+            <feMerge>
+                <feMergeNode in="glow"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+        <mask id="circuitMask">
+            <rect x="0" y="0" width="400" height="300" fill="white"/>
+            <path d="M0 0 L400 300 M0 300 L400 0" stroke="black" stroke-width="2"/>
+            <path d="M0 50 L400 50 M0 100 L400 100 M0 150 L400 150 M0 200 L400 200 M0 250 L400 250" stroke="black" stroke-width="1"/>
+            <path d="M50 0 L50 300 M100 0 L100 300 M150 0 L150 300 M200 0 L200 300 M250 0 L250 300 M300 0 L300 300 M350 0 L350 300" stroke="black" stroke-width="1"/>
+        </mask>
+    </defs>
+
+    <!-- Deep space background with subtle nebulae -->
+    <rect x="0" y="0" width="400" height="300" fill="#0A0A1A"/>
+    <circle cx="50" cy="20" r="30" fill="#101020" opacity="0.2"> <!-- Changed purple to an even darker, more blended shade and increased opacity -->
+        <animate attributeName="cx" values="50;80;50" dur="15s" repeatCount="indefinite"/>
+        <animate attributeName="cy" values="20;50;20" dur="17s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="350" cy="280" r="40" fill="#DAA520" opacity="0.08">
+        <animate attributeName="cx" values="350;320;350" dur="18s" repeatCount="indefinite"/>
+        <animate attributeName="cy" values="280;250;280" dur="16s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Main Circuit Board / Network Core (pulsating and complex) -->
+    <g transform="translate(200, 150) rotate(15)" filter="url(#ultimateTechGlow)">
+        <rect x="-100" y="-80" width="200" height="160" rx="15" fill="#000000" opacity="0.3" stroke="url(#goldGradientUltimate)" stroke-width="2">
+            <animate attributeName="stroke-opacity" values="1;0.5;1" dur="4s" repeatCount="indefinite"/>
+        </rect>
+        <path d="M-80 -60 L80 -60 L80 60 L-80 60 Z" fill="url(#goldGradientUltimate)" mask="url(#circuitMask)" opacity="0.05"/>
+
+        <!-- Central pulsating node -->
+        <circle cx="0" cy="0" r="30" fill="url(#goldGradientUltimate)">
+            <animate attributeName="r" values="30;35;30" dur="2.5s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="1;0.7;1" dur="2.5s" repeatCount="indefinite"/>
+        </circle>
+
+        <!-- Interconnecting lines / data flow -->
+        <path d="M-80 0 L-30 0 C -10 -20, 10 -20, 30 0 L80 0" stroke="url(#goldGradientUltimate)" stroke-width="3" stroke-linecap="round" fill="none">
+            <animate attributeName="stroke-dasharray" values="0 100; 100 0" dur="3s" repeatCount="indefinite"/>
+        </path>
+        <path d="M-80 40 L-30 40 C -10 20, 10 20, 30 40 L80 40" stroke="url(#goldGradientUltimate)" stroke-width="3" stroke-linecap="round" fill="none">
+            <animate attributeName="stroke-dasharray" values="0 80; 80 0" dur="3.2s" repeatCount="indefinite" begin="0.5s"/>
+        </path>
+        <path d="M-80 -40 L-30 -40 C -10 -60, 10 -60, 30 -40 L80 -40" stroke="url(#goldGradientUltimate)" stroke-width="3" stroke-linecap="round" fill="none">
+            <animate attributeName="stroke-dasharray" values="0 120; 120 0" dur="3.5s" repeatCount="indefinite" begin="1s"/>
+        </path>
+
+        <!-- Rotating gears / processors -->
+        <g transform="translate(50, -50)">
+            <circle cx="0" cy="0" r="15" fill="url(#goldGradientUltimate)"/>
+            <path d="M15 0 L10 5 L0 5 L-5 10 L-15 10 L-10 5 L-10 -5 L-15 -10 L-5 -10 L0 -5 L10 -5 L5 0 Z" fill="#FFF" opacity="0.2"/>
+            <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="10s" repeatCount="indefinite" additive="sum"/>
+        </g>
+        <g transform="translate(-50, 50)">
+            <circle cx="0" cy="0" r="12" fill="url(#goldGradientUltimate)"/>
+            <path d="M12 0 L8 4 L0 4 L-4 8 L-12 8 L-8 4 L-8 -4 L-12 -8 L-4 -8 L0 -4 L8 -4 L4 0 Z" fill="#FFF" opacity="0.2"/>
+            <animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="12s" repeatCount="indefinite" additive="sum"/>
+        </g>
+    </g>
+
+    <!-- Abstract data visualizations / particles -->
+    <rect x="30" y="20" width="10" height="10" fill="url(#goldGradientUltimate)" opacity="0">
+        <animate attributeName="x" values="30;370;30" dur="8s" repeatCount="indefinite"/>
+        <animate attributeName="y" values="20;280;20" dur="9s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;0" dur="4s" repeatCount="indefinite"/>
+    </rect>
+    <circle cx="370" cy="280" r="5" fill="url(#goldGradientUltimate)" opacity="0">
+        <animate attributeName="cx" values="370;30;370" dur="7s" repeatCount="indefinite" begin="2s"/>
+        <animate attributeName="cy" values="280;20;280" dur="8s" repeatCount="indefinite" begin="2s"/>
+        <animate attributeName="opacity" values="0;1;0" dur="3.5s" repeatCount="indefinite" begin="2s"/>
+    </circle>
+
+    <!-- Digital Text Overlay -->
+    <text x="200" y="280" font-family="'Share Tech Mono', monospace" font-size="20" fill="#FFD700" text-anchor="middle" filter="url(#ultimateTechGlow)" opacity="0.6">
+        <tspan>INNOVATE &amp; INSPIRE</tspan>
+        <animate attributeName="opacity" values="0.6;1;0.6" dur="5s" repeatCount="indefinite"/>
+        <animateTransform attributeName="transform" type="translate" values="0 0; 0 -2; 0 0" dur="2s" repeatCount="indefinite"/>
+    </text>
+
+</svg>

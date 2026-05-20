@@ -18,8 +18,8 @@ const Navbar = () => {
                 <div className="flex items-center justify-between h-20">
                     <div className="flex items-center space-x-4">
                         <Link to="/" className="flex items-center space-x-3 group">
-                            <div className="relative overflow-hidden rounded-full border-2 border-fivestar-gold/50 group-hover:border-fivestar-gold transition-colors duration-300">
-                                <img src={logo} alt="5 Star Solutions" className="h-10 w-10 object-cover" />
+                            <div className="relative rounded-md border-2 border-fivestar-gold/50 group-hover:border-fivestar-gold transition-colors duration-300 p-1 bg-transparent">
+                                <img src={logo} alt="5 Star Solutions" className="h-12 w-12 object-contain" />
                             </div>
                             <div className="flex flex-col">
                                 <span className="text-xl font-bold tracking-wider text-fivestar-gold group-hover:text-fivestar-gold-light transition-colors">5 STAR</span>
