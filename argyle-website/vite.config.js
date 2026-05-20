@@ -4,9 +4,9 @@ import path from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-    // Site is served from the repository root for GitHub Pages — use '/' base.
-    // If you later serve from a subpath, change this value accordingly.
-    base: '/',
+    // Site is deployed to GitHub Pages at /Capstone/, use that as the base path.
+    // This ensures built asset URLs include the /Capstone/ prefix.
+    base: '/Capstone/',
     plugins: [react()],
     resolve: {
         alias: {
