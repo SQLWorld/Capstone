@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
 
+const MotionLink = motion(Link);
+
 const Home = () => {
     const { t } = useLanguage();
 
@@ -238,8 +240,8 @@ const Home = () => {
                         transition={{ duration: 0.8, delay: 0.8, type: "spring", stiffness: 100 }}
                         className="flex flex-col sm:flex-row gap-4 justify-center items-center"
                     >
-                        <motion.a
-                            href="/resource-map"
+                        <MotionLink
+                            to="/resource-map"
                             whileHover={{ scale: 1.05, boxShadow: "0 0 25px rgba(255, 184, 0, 0.7)" }}
                             whileTap={{ scale: 0.95 }}
                             onClick={(e) => {
@@ -253,10 +255,10 @@ const Home = () => {
                             <ArrowRight className="ml-2 w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform" />
                             {/* Button shimmer effect */}
                             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-                        </motion.a>
+                        </MotionLink>
 
-                        <motion.a
-                            href="/partner-portal"
+                        <MotionLink
+                            to="/partner-portal"
                             whileHover={{ scale: 1.05, boxShadow: "0 0 25px rgba(255, 184, 0, 0.7)" }}
                             whileTap={{ scale: 0.95 }}
                             onClick={(e) => {
@@ -272,7 +274,7 @@ const Home = () => {
                             <ArrowRight className="ml-2 w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform" />
                             {/* Button shimmer effect */}
                             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-                        </motion.a>
+                        </MotionLink>
                     </motion.div>
 
                     {/* Animated elements */}
