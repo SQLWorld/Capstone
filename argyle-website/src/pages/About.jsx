@@ -30,7 +30,7 @@ const About = () => {
     const stats = [
         { number: '10+', label: t('about.stats.partners') },
         { number: '5,000+', label: t('about.stats.served') },
-        { number: '3', label: t('about.stats.languages') },
+        { number: '2', label: t('about.stats.languages') },
         { number: '24/7', label: t('about.stats.access') }
     ];
 
